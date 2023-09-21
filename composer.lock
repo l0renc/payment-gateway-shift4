@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ad92d83812596f5fe7b5a58efef01d6",
+    "content-hash": "102518d4357a926a9def34e2fc1d1ccf",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1957,6 +1957,47 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.0"
             },
             "time": "2021-07-14T16:46:02+00:00"
+        },
+        {
+            "name": "shift4/shift4-php",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shift4developer/shift4-php.git",
+                "reference": "5e6e730604411bb867bf964dd7fa9b39e46bd47f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shift4developer/shift4-php/zipball/5e6e730604411bb867bf964dd7fa9b39e46bd47f",
+                "reference": "5e6e730604411bb867bf964dd7fa9b39e46bd47f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shift4\\": "lib/Shift4/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shift4",
+                    "homepage": "https://dev.shift4.com/"
+                }
+            ],
+            "description": "Shift4 PHP Library",
+            "homepage": "https://dev.shift4.com/",
+            "support": {
+                "issues": "https://github.com/shift4developer/shift4-php/issues",
+                "source": "https://github.com/shift4developer/shift4-php/tree/v2.0.0"
+            },
+            "time": "2023-03-07T12:01:50+00:00"
         },
         {
             "name": "symfony/asset",

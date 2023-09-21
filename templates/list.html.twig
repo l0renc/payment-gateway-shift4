@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of Charges{% endblock %}
+
+{% block body %}
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for charge in charges %}
+            <tr>
+                <td>{{ charge.id }}</td>
+                <td>{{ charge.amount / 100 }} {{ 'EUR' }}</td>
+                <td>{{ charge.status }}</td>
+                <td>{{ charge.description ? charge.description : 'N/A' }}</td>
+                <td>{{ charge.created|date('d-m-Y H:i') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

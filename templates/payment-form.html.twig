@@ -1,0 +1,57 @@
+{# templates/payment-form.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Form</title>
+</head>
+<body>
+
+<form action="{{ path('process_payment') }}" method="post">
+    <div>
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount">
+    </div>
+
+    <div>
+        <label for="currency">Currency:</label>
+        <select id="currency" name="currency">
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <!-- Add other currency options as needed -->
+        </select>
+    </div>
+
+    <div>
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" name="card[number]">
+    </div>
+
+    <div>
+        <label for="expMonth">Expiry Month:</label>
+        <input type="text" id="expMonth" name="card[expMonth]">
+    </div>
+
+    <div>
+        <label for="expYear">Expiry Year:</label>
+        <input type="text" id="expYear" name="card[expYear]">
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+        <button type="button" id="autoFill">Auto-fill</button>
+    </div>
+</form>
+
+<script>
+    document.getElementById('autoFill').addEventListener('click', function() {
+        document.getElementById('amount').value = '499';
+        document.getElementById('currency').value = 'EUR';
+        document.getElementById('cardNumber').value = '4242424242424242';
+        document.getElementById('expMonth').value = '11';
+        document.getElementById('expYear').value = '2024';
+    });
+</script>
+
+</body>
+</html>
