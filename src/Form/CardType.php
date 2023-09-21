@@ -55,13 +55,13 @@ class CardType extends AbstractType
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Callback(function($value, $context) {
-                        if ($value == 2024 && $context->getRoot()->get('card')->get('expMonth')->getData() < 10) {
-                            $context->buildViolation('For the year 2024, the month should be between 10 and 12.')
+                        if ($value == 2023 && $context->getRoot()->get('card')->get('expMonth')->getData() < 10) {
+                            $context->buildViolation('For the year 2023, the month should be between 10 and 12.')
                                 ->atPath('card.expMonth')
                                 ->addViolation();
                         }
-                        if ($value < 2024) {
-                            $context->buildViolation('Year should be 2024 or later.')
+                        if ($value < 2023) {
+                            $context->buildViolation('Year should be 2023 or later.')
                                 ->atPath('card.expYear')
                                 ->addViolation();
                         }
