@@ -1,0 +1,28 @@
+<form action="/payment-handler" method="post" id="payment-form">
+    <span id="payment-error"></span>
+
+    <div class="form-group">
+        <label>Card Number</label>
+        <div data-shift4="number"></div>
+    </div>
+
+    <div class="form-group">
+        <label>Expiration</label>
+        <div data-shift4="expiry"></div>
+    </div>
+
+    <div class="form-group">
+        <label>CVC</label>
+        <div data-shift4="cvc"></div>
+    </div>
+
+    <button type="submit">Pay</button>
+</form>
+
+<script type="text/javascript">
+    // Initialize Shift4 object with your public key
+    var shift4 = Shift4("pk_test_z7bbbHGPMp8XLGWbTHI9UAuO");
+
+    // Create components to securely collect sensitive payment data
+    var components = shift4.createComponentGroup().automount("#payment-form");
+</script>

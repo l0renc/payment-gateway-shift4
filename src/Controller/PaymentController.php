@@ -23,6 +23,12 @@ class PaymentController extends AbstractController
         return $this->render('shift4-payment-form.html.twig');
     }
 
+    #[Route('/custom-checkout/payments', name : 'custom_checkout_process_payment_form', methods: ['POST','GET'])]
+    public function customerCheckoutProcessPaymentForm()
+    {
+        return $this->render('shift4-custom-payment-form.html.twig');
+    }
+
     #[Route('/payments', name : 'process_payment', methods: ['POST'])]
     public function processPaymentAction(Request $request, Shift4Manager $shift4Manager)
     {
