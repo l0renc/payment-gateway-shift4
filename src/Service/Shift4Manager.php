@@ -57,7 +57,7 @@ class Shift4Manager
         return $charges;
     }
 
-    public function getCustomerList()
+    public function getCustomersList()
     {
         /** @var ListResponse $response */
         $list = $this->gateway->listCustomers()->getList();

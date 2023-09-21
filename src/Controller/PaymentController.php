@@ -66,7 +66,7 @@ class PaymentController extends AbstractController
     #[Route('/customers/list', name : 'customers_list', methods: ['GET'])]
     public function customersListAction(Shift4Manager $shift4Manager)
     {
-        $customers = $shift4Manager->getCustomerList();
+        $customers = $shift4Manager->getCustomersList();
 
         return $this->render('customers-list.html.twig', [
             'customers' => $customers,
