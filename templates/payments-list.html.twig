@@ -18,7 +18,7 @@
         {% for charge in charges %}
             <tr>
                 <td>{{ charge.id }}</td>
-                <td>{{ charge.amount / 100 }} {{ 'EUR' }}</td>
+                <td>{{ charge.amount / 100 }} {{ charge.currency }}</td>
                 <td>{{ charge.status }}</td>
                 <td>{{ charge.description ? charge.description : 'N/A' }}</td>
                 <td>{{ charge.created|date('d-m-Y H:i') }}</td>

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of Customers{% endblock %}
+
+{% block body %}
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Created Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.email}} </td>
+                <td>{{ customer.created|date('d-m-Y H:i') }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
