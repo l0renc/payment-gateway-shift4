@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Shift4\Response\Charge;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,10 +35,18 @@ class PaymentController extends AbstractController
     {
         $data = $request->request->all();
         $shift4Manager->init();
+
+        /** @var Charge $response */
         $response = $shift4Manager->processPayment($data);
 
         return $this->json($response, Response::HTTP_CREATED);
 
+        // Todo
+//        $shift4Manager->createCustomer($response);
+//        $card = $response->getCard();
+//        $customerRequest = new CustomerRequest();
+//        $customerRequest->email('user@example.com')->card($card->getId);
+//        $customer = $this->gateway->createCustomer($customerRequest);
     }
 
     #[Route('/payments/refund/{chargeId}', name : 'process_refund', methods: ['POST'])]

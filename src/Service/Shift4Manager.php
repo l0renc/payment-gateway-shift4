@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use Shift4\Request\CustomerRequest;
 use Shift4\Response\Charge;
 use Shift4\Response\Customer;
 use Shift4\Response\ListResponse;
@@ -35,6 +36,16 @@ class Shift4Manager
         $response = $this->gateway->createRefund($refundRequest);
 
         return $response;
+    }
+
+    public function createCustomer(Charge $charge)
+    {
+        $card = $charge->getCard();
+        $customerRequest = new CustomerRequest();
+        $customerRequest->email('user@example.com')->card($card->getId());
+        $customer = $this->gateway->createCustomer($customerRequest);
+
+        return $customer;
     }
 
     public function getPaymentsList()
@@ -76,6 +87,7 @@ class Shift4Manager
 
     public function getFormattedRequest($request)
     {
+        unset($request['email']);
         $amount = number_format($request['amount'], 2);
         $amount = $amount  * 100;
 

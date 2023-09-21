@@ -8,6 +8,12 @@
 <body>
 
 <form action="{{ path('process_payment') }}" method="post">
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+    </div>
+
     <div>
         <label for="amount">Amount:</label>
         <input type="text" id="amount" name="amount">
@@ -45,6 +51,7 @@
 
 <script>
     document.getElementById('autoFill').addEventListener('click', function() {
+        document.getElementById('email').value = 'doda.lorenc@gmail.com';
         document.getElementById('amount').value = '499';
         document.getElementById('currency').value = 'EUR';
         document.getElementById('cardNumber').value = '4242424242424242';
