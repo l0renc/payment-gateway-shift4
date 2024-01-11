@@ -76,6 +76,9 @@ class Shift4Manager
         return $charges;
     }
 
+    /**
+     * @return array|array[]
+     */
     public function getCustomersList()
     {
         /** @var ListResponse $response */
