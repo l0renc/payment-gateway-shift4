@@ -52,6 +52,9 @@ class Shift4Manager
         return $customer;
     }
 
+    /**
+     * @return array|array[]
+     */
     public function getPaymentsList()
     {
         /** @var ListResponse $response */
