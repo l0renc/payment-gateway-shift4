@@ -29,6 +29,10 @@ class Shift4Manager
         return $response;
     }
 
+    /**
+     * @param $request
+     * @return Charge
+     */
     public function processRefund($request)
     {
         $refundRequest = $this->getFormattedRequest($request);
