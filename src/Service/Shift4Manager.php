@@ -19,6 +19,10 @@ class Shift4Manager
         $this->gateway = new Shift4Gateway(self::PRIVATE_KEY);
     }
 
+    /**
+     * @param $request
+     * @return Charge
+     */
     public function processPayment($request)
     {
         $chargeRequest = $this->getFormattedRequest($request);
