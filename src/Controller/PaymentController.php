@@ -71,7 +71,7 @@ class PaymentController extends AbstractController
     #[Route('/payments/list', name : 'payments_list', methods: ['GET'])]
     public function paymentsListAction(Shift4Manager $shift4Manager)
     {
-        //shift init
+        //shift init test
         $shift4Manager->init();
         $charges = $shift4Manager->getPaymentsList();
 
