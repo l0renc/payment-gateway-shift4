@@ -25,9 +25,9 @@ class PaymentController extends AbstractController
     }
 
     #[Route('/custom-checkout/payments', name : 'custom_checkout_process_payment_form', methods: ['POST','GET'])]
-    public function customerCheckoutProcessPaymentForm()
+    public function customCheckoutProcessPaymentForm()
     {
-        return $this->render('shift4-custom-payment-form.html.twig');
+        return $this->render('shift4-custom2-payment-form.html.twig');
     }
 
     #[Route('/payments', name : 'process_payment', methods: ['POST'])]
@@ -42,6 +42,7 @@ class PaymentController extends AbstractController
         return $this->json($response, Response::HTTP_CREATED);
 
         // Todo
+        //Test commit
 //        $shift4Manager->createCustomer($response);
 //        $card = $response->getCard();
 //        $customerRequest = new CustomerRequest();
@@ -70,6 +71,7 @@ class PaymentController extends AbstractController
     #[Route('/payments/list', name : 'payments_list', methods: ['GET'])]
     public function paymentsListAction(Shift4Manager $shift4Manager)
     {
+        //shift init
         $shift4Manager->init();
         $charges = $shift4Manager->getPaymentsList();
 
