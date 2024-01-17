@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div id="payment-error" class="alert alert-danger hidden"></div>
+
+    <form action="{{ path('/custom-post-checkout/payments') }}" method="post" id="payment-form" class="grid grid-cols-1 gap-4">
+        <input type="hidden" name="_csrf" value="{{ csrf_token('custom-form') }}">
+
+        <div class="grid gap-3 grid-cols-8">
+            <label class="col-span-2 flex items-center">
+                Card number
+            </label>
+            <div class="col-span-6">
+                <div data-shift4="number" class="form-control"></div>
+            </div>
+        </div>
+
+        <div class="grid gap-3 grid-cols-8">
+            <label class="col-span-2 flex items-center">
+                Expiration
+            </label>
+            <div class="col-span-2">
+                <div data-shift4="expiry" class="form-control"></div>
+            </div>
+
+            <label class="col-span-2 flex items-center">
+                Cvc
+            </label>
+            <div class="col-span-2">
+                <div data-shift4="cvc" class="form-control"></div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn-primary w-full flex justify-center">Buy now</button>
+        </div>
+    </form>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://js.dev.shift4.com/shift4.js"></script>
+    <script type="text/javascript" src="{{ asset('js/your_js_file.js') }}"></script>
+{% endblock %}
