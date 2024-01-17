@@ -83,6 +83,7 @@ class PaymentController extends AbstractController
     #[Route('/customers/list', name : 'customers_list', methods: ['GET'])]
     public function customersListAction(Shift4Manager $shift4Manager)
     {
+        //test1
         $shift4Manager->init();
         $customers = $shift4Manager->getCustomersList();
 
