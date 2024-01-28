@@ -64,6 +64,7 @@ class PaymentController extends AbstractController
     #[Route('/payment-handler', name : 'payment_handler', methods: ['POST'])]
     public function payemntHandlerAction(Request $request)
     {
+        // Test
         return $this->json($request->request->all(), Response::HTTP_CREATED);
 
     }
